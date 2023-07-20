@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body{
+        background-color:#116466;
+    }
+    table{
+        background-color:#2C3531;
+        padding: 20px;
+        border-spacing: 10px;
+        border-radius: 20px;
+    }
+    h1{
+        color:white;
+    }
+    tr{
+        border-spacing: 10px;
+    }
+    input[type="button"] {
+        width: 80px;
+        height: 60px;
+        font-size: 20px;
+        background-color:#D9B08C;
+        border-radius: 10px;
+    }
+    input[type="text"] {
+        width: 255px;
+        height: 40px; 
+        font-size: 20px; 
+        background-color: white;
+    }
+  </style>
+</head>
+<body>
+ <center>
+    <h1>CALCULATOR</h1>
+    <table>
+        <tr>
+          <td colspan="3"> <input type="text" id="result" disabled /> </td>
+          <td> <input type="button" value="C" onclick="clearRes()" id="btn" /> </td>
+        </tr>
+        <tr>
+          <td> <input type="button" value="1" onclick="appendText('1')" /> </td>
+          <td> <input type="button" value="2" onclick="appendText('2')" /> </td>
+          <td> <input type="button" value="3" onclick="appendText('3')" /> </td>
+          <td> <input type="button" value="/" onclick="appendText('/')" /> </td>
+        </tr>
+        <tr>
+          <td> <input type="button" value="4" onclick="appendText('4')" /> </td>
+          <td> <input type="button" value="5" onclick="appendText('5')" /> </td>
+          <td> <input type="button" value="6" onclick="appendText('6')" /> </td>
+          <td> <input type="button" value="-" onclick="appendText('-')" /> </td>
+        </tr>
+        <tr>
+          <td> <input type="button" value="7" onclick="appendText('7')" /> </td>
+          <td> <input type="button" value="8" onclick="appendText('8')" /> </td>
+          <td> <input type="button" value="9" onclick="appendText('9')" /> </td>
+          <td> <input type="button" value="+" onclick="appendText('+')" /> </td>
+        </tr>
+        <tr>
+          <td> <input type="button" value="." onclick="appendText('.')" /> </td>
+          <td> <input type="button" value="0" onclick="appendText('0')" /> </td>
+          <td> <input type="button" value="=" onclick="calResult()" id="btn" /> </td>
+          <td> <input type="button" value="*" onclick="appendText('*')" /> </td>
+        </tr>
+      </table>
+ </center>
+<script>
+    function clearRes() {
+        document.getElementById("result").value = "";
+    }
+    function appendText(key) {
+        document.getElementById("result").value += key;
+    }
+    function calResult() {
+        var input = document.getElementById("result").value;
+        var output = eval(input);
+        document.getElementById("result").value = output;
+    }
+</script>
+</body>
+</html>
